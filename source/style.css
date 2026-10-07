@@ -1,0 +1,138 @@
+/* ===== EECS 4415 Master Study Guide — print stylesheet (WeasyPrint) ===== */
+@page { size: A4; margin: 19mm 15mm 18mm 15mm;
+  @top-left   { content: string(lecname) " — " string(chapname); font: 8pt 'Inter','DejaVu Sans',sans-serif; color:#6b7280; }
+  @top-right  { content: "EECS 4415 · Big Data Systems — Master Study Guide"; font: 8pt 'Inter','DejaVu Sans',sans-serif; color:#6b7280; }
+  @bottom-center { content: counter(page); font: 8.5pt 'Inter','DejaVu Sans',sans-serif; color:#374151; }
+}
+@page cover { margin:0; @top-left{content:none} @top-right{content:none} @bottom-center{content:none} }
+@page :first { }
+html { font-family: 'Inter','DejaVu Sans',sans-serif; font-size: 9.6pt; line-height: 1.42; color:#1f2937; }
+body { margin:0; }
+p { margin: 0 0 5pt 0; orphans:2; widows:2; }
+ul,ol { margin: 2pt 0 6pt 0; padding-left: 16pt; }
+li { margin-bottom: 2pt; }
+code, .mono { font-family: 'DejaVu Sans Mono', monospace; font-size: 8.6pt; background:#f3f4f6; padding: 0 2pt; border-radius:2pt; }
+pre { font-family:'DejaVu Sans Mono',monospace; font-size:8pt; background:#f3f4f6; border:1px solid #e5e7eb; border-radius:3pt; padding:5pt 7pt; white-space:pre-wrap; margin:4pt 0 7pt 0; }
+b, strong { font-weight:700; }
+.math { font-family:'DejaVu Serif','Inter',serif; font-style:italic; }
+.frac { display:inline-block; vertical-align:middle; text-align:center; margin:0 1.5pt; line-height:1.1; }
+.frac > span { display:block; padding:0 2pt; }
+.frac > span:first-child { border-bottom:0.8pt solid #1f2937; }
+.nowrap { white-space:nowrap; }
+.small { font-size:8.4pt; color:#4b5563; }
+.center { text-align:center; }
+
+/* Chapter + headings */
+section.chapter { page-break-before: always; }
+section.chapter > h1.chapter-title { bookmark-level:1; bookmark-label: content();
+  margin:0 0 6pt 0; padding:10pt 12pt; font-size:21pt; line-height:1.15; color:#fff; border-radius:5pt; background:#1d4ed8; }
+section.chapter > h1.chapter-title .lec { display:block; font-size:10pt; letter-spacing:1.2pt; text-transform:uppercase; opacity:.85; margin-bottom:3pt; }
+.lec { string-set: lecname content(); }
+.ttl { string-set: chapname content(); }
+.L0 > h1.chapter-title { background:#0f172a; }
+.L1 > h1.chapter-title { background:#475569; } .L2 > h1.chapter-title { background:#1d4ed8; }
+.L3 > h1.chapter-title { background:#c2410c; } .L4 > h1.chapter-title { background:#15803d; }
+.L5 > h1.chapter-title { background:#6d28d9; }
+h2 { bookmark-level:2; bookmark-label:content(); font-size:14.5pt; margin:14pt 0 4pt 0; padding-bottom:2pt; border-bottom:1.6pt solid #1d4ed8; color:#111827; page-break-after:avoid; }
+.L1 h2 { border-color:#475569; } .L3 h2 { border-color:#c2410c; } .L4 h2 { border-color:#15803d; } .L5 h2 { border-color:#6d28d9; }
+h3 { bookmark-level:3; bookmark-label:content(); font-size:11.4pt; margin:10pt 0 3pt 0; color:#111827; page-break-after:avoid; }
+h4 { font-size:10pt; margin:7pt 0 2pt 0; color:#374151; page-break-after:avoid; }
+h2 + .srline, h3 + .srline { margin-top:-1pt; }
+
+/* Slide reference badges */
+.srline { margin:0 0 5pt 0; font-size:8.4pt; color:#374151; }
+.sr { display:inline-block; font-size:8pt; font-weight:700; color:#fff; background:#1d4ed8; border-radius:8pt; padding:0.5pt 6pt; margin-right:3pt; white-space:nowrap; }
+.L1 .sr { background:#475569; } .L3 .sr { background:#c2410c; } .L4 .sr { background:#15803d; } .L5 .sr { background:#6d28d9; }
+.sr.pdfp { background:#9ca3af; font-weight:600; }
+
+/* Boxes */
+.box { border-left:3.2pt solid #2563eb; background:#eff6ff; border-radius:0 3pt 3pt 0; padding:4pt 8pt 3pt 8pt; margin:5pt 0 7pt 0; page-break-inside:avoid; }
+.box > .bt { font-size:7.8pt; font-weight:800; letter-spacing:.8pt; text-transform:uppercase; color:#1e40af; margin-bottom:2pt; }
+.box p:last-child, .box ul:last-child, .box ol:last-child { margin-bottom:1pt; }
+.box.def    { border-color:#2563eb; background:#eff6ff; } .box.def > .bt { color:#1e40af; }
+.box.key    { border-color:#d97706; background:#fffbeb; } .box.key > .bt { color:#92400e; }
+.box.intuit { border-color:#0d9488; background:#f0fdfa; } .box.intuit > .bt { color:#115e59; }
+.box.tip    { border-color:#16a34a; background:#f0fdf4; } .box.tip > .bt { color:#166534; }
+.box.warn   { border-color:#dc2626; background:#fef2f2; } .box.warn > .bt { color:#991b1b; }
+.box.formula{ border-color:#7c3aed; background:#f5f3ff; } .box.formula > .bt { color:#5b21b6; }
+.box.recap  { border-color:#475569; background:#f8fafc; } .box.recap > .bt { color:#334155; }
+.box.noexam { border-color:#9ca3af; background:#f3f4f6; border-style:dashed; border-left-style:solid; } .box.noexam > .bt { color:#4b5563; }
+.box.long { page-break-inside:auto; }
+
+/* Worked examples */
+.example { border:1px solid #cbd5e1; border-radius:4pt; margin:7pt 0 9pt 0; padding:0 8pt 4pt 8pt; background:#fff; }
+.example > .et { margin:0 -8pt 4pt -8pt; padding:3pt 8pt; background:#e2e8f0; font-weight:800; font-size:9pt; border-radius:3pt 3pt 0 0; color:#0f172a; }
+
+/* Quizzes */
+.quiz { border:1.4pt solid #0f766e; border-radius:5pt; margin:9pt 0 11pt 0; background:#fff; }
+.quiz > .qhead { background:#0f766e; color:#fff; padding:3.5pt 8pt; font-weight:800; font-size:9.4pt; border-radius:3pt 3pt 0 0; }
+.quiz > .qhead .qid { margin-right:6pt; background:#fff; color:#0f766e; border-radius:7pt; padding:0 6pt; font-size:8.4pt; }
+.quiz > .qhead .sr { background:#134e4a; }
+.quiz > .qtext { padding:5pt 9pt 3pt 9pt; background:#f0fdfa; border-bottom:1px dashed #5eead4; }
+.quiz > .qtext .qlabel, .solution > .sol-title { font-size:7.8pt; font-weight:800; letter-spacing:.8pt; text-transform:uppercase; color:#0f766e; }
+.solution { padding:4pt 9pt 4pt 9pt; }
+.solution > .sol-title { margin-bottom:3pt; }
+.solution ol.steps { padding-left:15pt; }
+.solution .final { margin-top:5pt; padding:4pt 8pt; background:#ecfdf5; border:1.2pt solid #10b981; border-radius:3pt; font-weight:700; page-break-inside:avoid; }
+.solution .marks { margin-top:4pt; padding:3pt 8pt; background:#fffbeb; border-left:3pt solid #d97706; font-size:8.6pt; page-break-inside:avoid; }
+.solution .marks > b:first-child { color:#92400e; }
+.solution .slidecheck { margin-top:4pt; font-size:8.4pt; color:#4b5563; }
+.quiz .part { margin:4pt 0; }
+.quiz .part > .pl { font-weight:800; color:#0f766e; }
+
+/* Tables */
+table { border-collapse:collapse; margin:4pt 0 8pt 0; max-width:100%; }
+table.grid th, table.grid td { border:0.8pt solid #cbd5e1; padding:2.2pt 5pt; vertical-align:top; text-align:left; }
+table.grid th { background:#e2e8f0; font-weight:700; }
+table.grid tr:nth-child(even) td { background:#f8fafc; }
+table.grid.compact th, table.grid.compact td { padding:1.2pt 4pt; font-size:8.6pt; }
+table.grid td.c, table.grid th.c { text-align:center; }
+table.grid td.hl { background:#dcfce7 !important; font-weight:700; }
+table.grid td.no { background:#fee2e2 !important; }
+table.wide { width:100%; }
+tr { page-break-inside:avoid; }
+
+/* Figures */
+figure.fig { margin:6pt 0 8pt 0; text-align:center; page-break-inside:avoid; }
+figure.fig svg { max-width:100%; height:auto; }
+figure.fig figcaption { font-size:8.2pt; color:#4b5563; margin-top:2pt; }
+.cols2 { column-count:2; column-gap:14pt; }
+.avoid-break { page-break-inside:avoid; }
+.pagebreak { page-break-before:always; }
+
+/* TOC / cross refs */
+a { color:inherit; text-decoration:none; }
+a.pageref::after { content:" (p. " target-counter(attr(href), page) ")"; color:#6b7280; font-size:8pt; }
+nav.toc { page-break-before:always; page-break-after:always; }
+nav.toc ul { list-style:none; padding-left:0; }
+nav.toc li.t1 { margin-top:7pt; font-weight:800; font-size:10.5pt; }
+nav.toc li.t2 { margin-left:12pt; font-weight:500; font-size:9pt; margin-bottom:0.6pt; }
+nav.toc li a::after { content: leader('.') target-counter(attr(href), page); }
+nav.toc li.t1 a::after { content: leader(' ') target-counter(attr(href), page); }
+
+/* Cover */
+.cover { page: cover; height:297mm; background:linear-gradient(160deg,#0f172a 0%,#1e3a8a 55%,#4c1d95 100%); color:#fff; padding:42mm 22mm 20mm 22mm; box-sizing:border-box; page-break-after:always; }
+.cover .kicker { letter-spacing:3pt; text-transform:uppercase; font-size:10pt; opacity:.8; }
+.cover h1 { font-size:34pt; line-height:1.1; margin:10pt 0 8pt 0; }
+.cover .sub { font-size:14pt; opacity:.92; margin-bottom:22pt; }
+.cover table { color:#fff; font-size:10.5pt; margin-top:12pt; }
+.cover td { padding:3pt 10pt 3pt 0; vertical-align:top; } .cover td:first-child { white-space:nowrap; }
+.cover .pill { display:inline-block; padding:1pt 8pt; border-radius:9pt; font-weight:800; font-size:9pt; margin-right:6pt; }
+.cover .foot { position:absolute; bottom:18mm; left:22mm; right:22mm; font-size:9pt; opacity:.75; }
+
+/* L2 fixer: keep-with-next rules */
+h2 + .srline, h3 + .srline, h4 + .srline { page-break-before:avoid; page-break-after:avoid; }
+.quiz > .qhead { page-break-after:avoid; }
+.solution > .sol-title { page-break-after:avoid; }
+table.grid.compact { page-break-inside:avoid; }
+table.grid tr:first-child { page-break-after:avoid; }
+
+.example > .et { page-break-after:avoid; break-after:avoid; }
+.quiz .qtext > .qlabel { page-break-after:avoid; }
+thead { display:table-header-group; }
+thead tr { page-break-after:avoid; }
+
+/* L2 fixer: quiz questions stay whole, readable marks, headings keep with next */
+.quiz > .qtext { page-break-inside:avoid; break-inside:avoid; }
+.solution .marks, .solution .slidecheck { font-size:9pt; line-height:1.35; }
+h2, h3, h4 { page-break-after:avoid; break-after:avoid; }
